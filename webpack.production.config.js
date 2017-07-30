@@ -66,7 +66,8 @@ const config = {
         path: path.join(__dirname, distPath),
         filename: '[name].js',
         sourceMapFilename: '[name].js.map',
-        publicPath: '/static/'
+        publicPath: '/static/',
+        library: 'exports',
     },
     plugins: [
         extractTextPlugin,
