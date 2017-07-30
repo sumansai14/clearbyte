@@ -1,0 +1,19 @@
+from .dev import Settings as DevSettings
+
+
+class Settings(DevSettings):
+
+    DEBUG = True
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'clearbyte',
+            'USER': 'Sai',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '',
+        }
+    }
+
+    CLEARBIT_API_KEY = 'insert your clearbit api key here'

@@ -1,0 +1,38 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="NONE,NOARCHIVE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if ENV == 'dev' %}
+        <link href="http://localhost:8080/assets/clearbyte.css" rel="stylesheet"/>
+    {% else %}
+        <link rel="stylesheet" type="text/css" href="{% static "dist/clearbyte.min.css" %}">
+    {% endif %}
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    {% block js %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+            {% if ENV == 'dev' %}
+                <script type="text/javascript" src="http://localhost:8080/assets/vendor.js"></script>
+                <script type="text/javascript" src="http://localhost:8080/assets/app.js"></script>
+            {% else %}
+                <script type="text/javascript" src="{% static "dist/vendor.js"%} "></script>
+                <script type="text/javascript" src="{% static "dist/app.js"%} "></script>
+            {% endif %}
+          <script>
+    for (var n in window.exports.default) {
+      window[n] = window.exports.default[n];
+    }
+    window.$ = window.jQuery;
+    </script>
+    {% endblock js %}
+</head>
+<body>
+<div class="container">
+    {% block body %}
+    {% endblock body %}
+</div>
+</body>
+</html>
