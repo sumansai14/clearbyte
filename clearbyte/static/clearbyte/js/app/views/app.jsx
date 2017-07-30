@@ -146,7 +146,7 @@ const Loading = React.createClass({
 const App = React.createClass({
 
     getInitialState() {
-        return {searchText: this.props.params.domainName || '', searchResult:{}, yourCompanies: [], notFound: false, loading: true}
+        return {searchText: this.props.params.domainName || '', searchResult:{}, yourCompanies: [], notFound: false, loading: false}
     },
     updateSearchResult(domainName){
         var self = this;
@@ -237,8 +237,10 @@ const App = React.createClass({
             content = (<Loading />)
         } else if (this.state.notFound) {
             content = (<NotFound />)
-        } else {
+        } else if (!_.isEmpty(this.state.searchResult)) {
             content = (<Company data={this.state.searchResult} isSearchResult={isSearchResult} onButtonClick={callback} key={key}/> )
+        } else {
+            content = (<div/>)
         }
         return (
             <div>
