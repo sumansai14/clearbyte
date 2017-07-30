@@ -4,7 +4,7 @@ from .dev import Settings as DevSettings
 class Settings(DevSettings):
 
     DEBUG = True
-
+    ENV = 'prod'
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
