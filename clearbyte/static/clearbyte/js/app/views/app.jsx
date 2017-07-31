@@ -19,14 +19,12 @@ const SearchBox = React.createClass({
                 </div>
             </div>
             <div className="row">
-                <div className="col-3"> </div>
-                <div className="col-2">
+                <div className="col-md-5 col center-align">
                     <button onClick={this.props.onSubmit} className="btn btn-outline-info btn-lg"> Search </button>                    
                 </div>
-                <div className="col-2">
+                <div className="col-md-5 col center-align">
                     <button className="btn btn-outline-secondary btn-lg"> {"I'm Feeling Lucky"} </button>
                 </div> 
-                <div className="col-3"> </div>
             </div>
             </div>
         )
