@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
 """
 import os
 
-from adamantium.utils.imports import get_default_django_settings_module
+from clearbyte.utils.imports import get_default_django_settings_module
 from whitenoise.django import DjangoWhiteNoise
 
 os.environ.setdefault(
