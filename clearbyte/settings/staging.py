@@ -24,3 +24,4 @@ class Settings(CommonSettings):
     STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
     ENV = 'staging'
+    CLEARBIT_API_KEY = 'sk_f5c4799caae03fbb744dbe69fd91f7cd'
